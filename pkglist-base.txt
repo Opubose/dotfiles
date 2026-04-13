@@ -99,7 +99,6 @@ garuda-dr460nized
 garuda-dracut-support
 garuda-fish-config
 garuda-gamer
-garuda-hardware-profile-nvidia
 garuda-hardware-profile-standard
 garuda-hardware-profile-standard-x11
 garuda-hardware-tool
@@ -137,8 +136,6 @@ grub-garuda
 grub-theme-garuda-dr460nized
 gstreamer-meta
 gvfs-smb
-gwe
-gwenview
 gzip
 hashcat
 heroic-games-launcher-bin
@@ -198,7 +195,6 @@ libdvdcss
 libinput-gestures-qt
 libmythes
 libreoffice-still
-libva-nvidia-driver
 libva-utils
 libvncserver
 licenses
@@ -250,7 +246,6 @@ npm
 nss-mdns
 ntfs-3g
 nut
-nvidia-container-toolkit
 nvtop
 obs-studio
 octopi
@@ -259,7 +254,6 @@ opam
 openbsd-netcat
 opencl-headers
 opencolorio
-opencv-cuda
 opencv-samples
 openjdk-doc
 openmp
@@ -316,7 +310,6 @@ python-mutagen
 python-nltk
 python-numba
 python-numexpr
-python-opencv-cuda
 python-opengl
 python-openpyxl
 python-pandas-datareader
@@ -334,14 +327,12 @@ python-pymysql
 python-pynvim
 python-pytables
 python-python-multipart
-python-pytorch-opt-cuda
 python-qtpy
 python-scikit-learn
 python-seaborn
 python-snappy
 python-sqlalchemy
 python-statsmodels
-python-torchvision-cuda
 python-triton
 python-tzdata
 python-websockets

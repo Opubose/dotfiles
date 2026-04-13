@@ -10,8 +10,15 @@ mkdir -p "$XDG_BIN_HOME"
 
 cd "$(dirname "$0")"
 
-echo "Installing packages from pkglist.txt"
-paru -S --needed stow binutils $(cat pkglist.txt)
+echo "Installing packages from pkglist-base.txt"
+paru -S --needed stow binutils $(cat pkglist-base.txt)
+
+if lspci | grep -iE 'vga|3d' | grep -iq nvidia; then
+    echo "Seems like you need nvidia drivers too >:3"
+    paru -S --needed $(cat pkglist-nvidia.txt)
+else
+    echo "Skipping NVIDIA-specific packages."
+fi
 
 echo "Applying config using Stow"
 stow -v -t "$HOME" fish

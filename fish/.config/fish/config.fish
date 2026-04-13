@@ -13,7 +13,9 @@ set -gx XDG_STATE_HOME "$HOME"/.local/state
 
 # Application-Specific Environment Variables
 set -gx CARGO_HOME "$XDG_DATA_HOME"/cargo
-set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME"/nv
+if type -q nvidia-smi
+    set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME"/nv
+end
 set -gx DOCKER_CONFIG "$XDG_CONFIG_HOME"/docker
 set -gx GDBHISTFILE "$XDG_DATA_HOME"/gdb/history
 set -gx GNUPGHOME "$XDG_DATA_HOME"/gnupg

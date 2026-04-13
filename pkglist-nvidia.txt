@@ -1,0 +1,9 @@
+garuda-hardware-profile-nvidia
+gwe
+gwenview
+libva-nvidia-driver
+nvidia-container-toolkit
+opencv-cuda
+python-opencv-cuda
+python-pytorch-opt-cuda
+python-torchvision-cuda
