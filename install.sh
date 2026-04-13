@@ -30,6 +30,7 @@ vim +PlugInstall +qall
 echo "Making KDE look familiar again"
 if command -v konsave &> /dev/null; then
     konsave -i my_desktop.knsv
+    konsave -a my_desktop
 fi
 
 echo "Done!"
