@@ -2,8 +2,7 @@
 
 1. clone the repo, obviously
 2. make the installer executable, obviously
-3. run `./install.sh`
-4. Run these:
+3. run these:
     ```bash
     rm -rf ~/.config/fish
     rm -rf ~/.local/share/konsole
@@ -13,3 +12,4 @@
 
     rm -rf ~/.config/vim
     ```
+4. run `./install.sh`
