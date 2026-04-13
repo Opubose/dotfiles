@@ -1,0 +1,24 @@
+chromium/
+google-chrome-for-testing/
+cef_user_data/
+mozilla/firefox/*.default/Cache/
+mozilla/firefox/*.default/startupCache/
+
+*/Cache/
+*/CachedData/
+*/Code Cache/
+*/GPUCache/
+*/blob_storage/
+*/Service Worker/
+
+chromium-backup-crashrecovery-*/
+pypoetry/cache/
+pip/cache/
+
+node_modules/
+__pycache__/
+.git/
+.venv/
+target/
+build/
+dist/

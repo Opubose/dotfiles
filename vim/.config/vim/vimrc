@@ -1,0 +1,102 @@
+" Plugins will be downloaded under the specified directory.
+"
+" Run the following command for the initial installation.
+"
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+" ── Ensure XDG envvars exist ─────────────────────────────────────────────────
+if empty($XDG_CONFIG_HOME)
+  let $XDG_CONFIG_HOME = expand('~/.config')
+endif
+if empty($XDG_DATA_HOME)
+  let $XDG_DATA_HOME = expand('~/.local/share')
+endif
+if empty($XDG_STATE_HOME)
+  let $XDG_STATE_HOME = expand('~/.local/state')
+endif
+
+" --- XDG Configuration for Vim ---
+set runtimepath^=$XDG_CONFIG_HOME/vim
+set runtimepath+=$XDG_DATA_HOME/vim
+set runtimepath+=$XDG_CONFIG_HOME/vim/after
+
+set packpath^=$XDG_DATA_HOME/vim,$XDG_CONFIG_HOME/vim
+set packpath+=$XDG_CONFIG_HOME/vim/after,$XDG_DATA_HOME/vim/after
+
+let g:netrw_home = $XDG_DATA_HOME."/vim"
+call mkdir($XDG_DATA_HOME."/vim/spell", "p")
+
+" --- Define the directories ---
+let s:backup_dir = $XDG_STATE_HOME . '/vim/backup'
+let s:swap_dir   = $XDG_STATE_HOME . '/vim/swap'
+let s:undo_dir   = $XDG_STATE_HOME . '/vim/undo'
+let s:view_dir   = $XDG_STATE_HOME . '/vim/view'
+
+" --- Create them if they don't exist ---
+if !isdirectory(s:backup_dir) | call mkdir(s:backup_dir, "p") | endif
+if !isdirectory(s:swap_dir)   | call mkdir(s:swap_dir, "p")   | endif
+if !isdirectory(s:undo_dir)   | call mkdir(s:undo_dir, "p")   | endif
+if !isdirectory(s:view_dir)   | call mkdir(s:view_dir, "p")   | endif
+
+" --- Assign them ---
+let &backupdir = s:backup_dir
+let &directory = s:swap_dir
+let &undodir   = s:undo_dir
+let &viewdir   = s:view_dir
+
+if !has("nvim") | set viminfofile=$XDG_STATE_HOME/vim/viminfo | endif
+
+call plug#begin( expand($XDG_CONFIG_HOME . '/vim/plugged') )
+
+" Declare the list of plugins.
+Plug 'tpope/vim-sensible'
+Plug 'junegunn/seoul256.vim'
+Plug 'chr4/nginx.vim'
+Plug 'chr4/sslsecure.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'dense-analysis/ale'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'tpope/vim-fugitive'
+Plug 'Rykka/riv.vim'
+Plug 'Rykka/InstantRst'
+Plug 'altercation/vim-colors-solarized'
+Plug 'godlygeek/tabular'
+Plug 'sillybun/vim-repl'
+Plug 'frazrepo/vim-rainbow'
+Plug 'rust-lang/rust.vim'
+Plug 'plasticboy/vim-markdown'
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+
+" My own editor setting.
+se ts=4
+se shiftwidth=4
+se expandtab
+se relativenumber
+se ruler
+
+" Folding related.
+"set foldlevelstart=20
+
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
+let g:rustfmt_autosave = 1
+
+" mapping leader
+let mapleader=","
+
+" normal mode (n), no-recursive map (nnoremap),
+" <cr> carriage-return i.e., enter
+nnoremap <leader>t :REPLToggle<cr>
+nnoremap <leader>s :REPLSendAll<cr>
+
+:set matchpairs+=<:>
+
+set rtp^="/home/opubose/.local/share/opam/coq-8.20/share/ocp-indent/vim"
+
+syntax enable
+filetype plugin indent on
+

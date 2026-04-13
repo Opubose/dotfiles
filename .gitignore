@@ -1,0 +1,8 @@
+.ssh/
+.gnupg/
+*.log
+.DS_Store
+.env
+vim/.config/vim/plugged/
+*.swp
+undo/
