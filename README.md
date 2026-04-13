@@ -1,3 +1,7 @@
+# prereq
+
+install garuda linux cuz im incapable of using plain arch (/hj). get that ventoy working bro!
+
 # installation
 
 1. clone the repo, obviously
@@ -13,3 +17,6 @@
     rm -rf ~/.config/vim
     ```
 4. run `./install.sh`
+
+# enjoy :P
+
