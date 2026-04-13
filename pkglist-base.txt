@@ -136,6 +136,7 @@ grub-garuda
 grub-theme-garuda-dr460nized
 gstreamer-meta
 gvfs-smb
+gwenview
 gzip
 hashcat
 heroic-games-launcher-bin
@@ -386,6 +387,7 @@ sqlite-doc
 squashfs-tools
 sshfs
 steam
+stow
 strace
 stress
 sudo
